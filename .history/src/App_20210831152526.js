@@ -22,7 +22,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Monsters Rolodex</h1>
       <SearchBox handelChange={e=>setsearchText(e.target.value)} placeholder="Name of Monster"/>
       <Cardlist monsters={filteredMonsters}/>
     </div>

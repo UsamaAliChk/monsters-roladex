@@ -17,14 +17,10 @@ function App() {
 
   const [searchText,setsearchText]=useState('');
 
-
-  const filteredMonsters=monsters.filter(monster=>monster.name.toLowerCase().includes(searchText.toLowerCase()))
-
   return (
     <div className="App">
-      <h1>Monsters Rolodex</h1>
-      <SearchBox handelChange={e=>setsearchText(e.target.value)} placeholder="Name of Monster"/>
-      <Cardlist monsters={filteredMonsters}/>
+      <SearchBox setsearchText={setsearchText}/>
+      <Cardlist monsters={monsters}/>
     </div>
   );
 }

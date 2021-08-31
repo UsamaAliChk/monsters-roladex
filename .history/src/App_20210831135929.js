@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./App.css";
+//import "./App.css";
 import Cardlist from "./components/card-list/card-list";
-import SearchBox from "./components/search-box/search-box";
+
 function App() {
   const [monsters, setmonsters] = useState([
     { name: "Frankenstien" ,id:"jsjaj"},
@@ -15,16 +15,9 @@ function App() {
     { name: "Dracula",id:"maksdjwk" },
   ]);
 
-  const [searchText,setsearchText]=useState('');
-
-
-  const filteredMonsters=monsters.filter(monster=>monster.name.toLowerCase().includes(searchText.toLowerCase()))
-
   return (
     <div className="App">
-      <h1>Monsters Rolodex</h1>
-      <SearchBox handelChange={e=>setsearchText(e.target.value)} placeholder="Name of Monster"/>
-      <Cardlist monsters={filteredMonsters}/>
+      <Cardlist monsters={monsters}/>
     </div>
   );
 }
